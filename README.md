@@ -20,12 +20,43 @@ A Chrome extension that gives you full control over HTML5 video playback speed o
 
 ---
 
+## Download
+
+| Format | Link |
+|--------|------|
+| ZIP | [video-speed-controller-pro-v0.0.1.zip](download/video-speed-controller-pro-v0.0.1.zip) |
+| CRX | [video-speed-controller-pro-v0.0.1.crx](download/video-speed-controller-pro-v0.0.1.crx) |
+
+---
+
 ## Installation
 
-1. Download or clone this repository.
+### Option 1: Install from ZIP (recommended)
+
+1. Download the [ZIP file](download/video-speed-controller-pro-v0.0.1.zip) from the download section above.
+2. Extract the ZIP to a folder on your computer.
+3. Open Chrome and navigate to `chrome://extensions`.
+4. Enable **Developer mode** (toggle in the top-right corner).
+5. Click **Load unpacked** and select the extracted folder.
+6. Click the **puzzle piece icon** in the Chrome toolbar and pin **Video Speed Controller - Pro**.
+
+### Option 2: Install from CRX
+
+1. Download the [CRX file](download/video-speed-controller-pro-v0.0.1.crx) from the download section above.
 2. Open Chrome and navigate to `chrome://extensions`.
 3. Enable **Developer mode** (toggle in the top-right corner).
-4. Click **Load unpacked** and select the `video-speed-control` folder.
+4. Drag and drop the `.crx` file onto the extensions page.
+5. Click **Add extension** when prompted.
+
+### Option 3: Install from source
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/sajjad-ahmed/video-speed-control-chrome.git
+   ```
+2. Open Chrome and navigate to `chrome://extensions`.
+3. Enable **Developer mode** (toggle in the top-right corner).
+4. Click **Load unpacked** and select the cloned folder.
 5. Click the **puzzle piece icon** in the Chrome toolbar and pin **Video Speed Controller - Pro**.
 
 ---
