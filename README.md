@@ -9,14 +9,12 @@ A Chrome extension that gives you full control over HTML5 video playback speed o
 
 ## Features
 
-- **Global Playback Speed** — Set a default video speed (0.25x to 4.00x) that applies to every website.
-- **Site-Specific Overrides** — Configure custom speeds for up to 10 individual domains (e.g. `youtube.com` at 2.00x, `facebook.com` at 1.50x). These take priority over the global speed.
-- **Use Current Site** — One-click button to add the domain of the page you're currently visiting. The button is disabled on non-website pages (e.g. `chrome://`, new tab, extensions) and only becomes active when you're on a valid site.
-- **Apply Confirmation** — Visual check button with toast notification to confirm when a site speed has been applied.
-- **Instant Updates** — Speed changes take effect immediately without refreshing the page.
-- **SPA Support** — Uses MutationObserver to detect dynamically loaded videos (important for sites like YouTube).
-- **Pinnable** — Pin the extension icon to the Chrome toolbar for quick access.
-- **Modern Dark UI** — Clean, polished interface with smooth animations, custom-styled controls, and card-based layout.
+- **Control any video, anywhere** — Adjust playback speed from 0.25x to 4.00x on any website. Speed through lectures, slow down tutorials, or binge-watch at your own pace.
+- **Different speeds for different sites** — Watch Udemy tutorials at 2x but enjoy Netflix at normal speed. Set up to 10 site-specific rules that kick in automatically.
+- **One-click current site** — Already on the page? Click "Use Current Site" to add the domain instantly — no typing needed.
+- **Instant, no-refresh updates** — Change a speed and it applies to the video right away. Works seamlessly on single-page apps like YouTube, Facebook, and Twitter.
+- **Pin it, forget it** — Pin the extension to your toolbar. One click to open, adjust, and you're done.
+- **Modern dark UI** — A sleek, polished interface with smooth animations, custom-styled controls, and a card-based layout. No browser-default ugliness — just a clean, intuitive experience.
 
 ---
 
