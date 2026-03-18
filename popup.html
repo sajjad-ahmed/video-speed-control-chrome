@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Video Speed Controller - Pro</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <img src="icons/icon48.png" alt="icon" class="header-icon" />
+      <h1 class="header-title">Video Speed Controller - Pro</h1>
+    </header>
+
+    <section class="panel">
+      <div class="panel-header">
+        <span class="panel-label">Global Playback Speed</span>
+        <span class="speed-badge" id="globalBadge">1.00x</span>
+      </div>
+      <div class="select-wrapper">
+        <select id="globalSpeed" class="styled-select">
+          <!-- options populated by JS -->
+        </select>
+        <span class="select-arrow">&#9662;</span>
+      </div>
+      <p class="panel-hint">Default speed for all websites</p>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="panel">
+      <div class="panel-header">
+        <span class="panel-label">Site-Specific Speeds</span>
+        <span class="count-badge" id="countBadge">0 / 10</span>
+      </div>
+      <p class="panel-hint">Override the global speed for specific domains</p>
+
+      <div id="siteList" class="site-list"></div>
+
+      <div class="btn-row">
+        <button id="addSiteBtn" class="btn-add" type="button">
+          <span class="btn-add-icon">+</span>
+          Add Site
+        </button>
+        <button id="useCurrentSiteBtn" class="btn-current-site" type="button" disabled>
+          <span class="btn-current-site-icon">&#9678;</span>
+          Use Current Site
+        </button>
+      </div>
+    </section>
+
+    <div class="reset-section">
+      <button id="resetAllBtn" class="btn-reset" type="button">Reset All</button>
+    </div>
+
+    <div id="toast" class="toast hidden"></div>
+
+    <footer class="footer">
+      Developed by <a href="https://sajjadahmed.com" target="_blank" class="footer-link"><strong>Sajjad Ahmed Niloy</strong> <svg class="external-link-icon" viewBox="0 0 16 16" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2H2v12h12v-4"/><path d="M9 1h6v6"/><path d="M15 1L7 9"/></svg></a> &middot; v0.0.1
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
