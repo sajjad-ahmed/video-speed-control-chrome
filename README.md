@@ -95,6 +95,9 @@ video-speed-control/
 ├── popup.js               # Popup logic (settings management, UI interactions)
 ├── content.js             # Content script (applies playbackRate to videos)
 ├── background.js          # Service worker (tab navigation handling)
+├── download/
+│   ├── video-speed-controller-pro-v0.0.1.zip   # Installable ZIP package
+│   └── video-speed-controller-pro-v0.0.1.crx   # Signed CRX package
 ├── .gitignore             # Git ignore rules
 ├── LICENSE                # MIT License
 └── README.md              # This file

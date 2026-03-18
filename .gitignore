@@ -13,7 +13,8 @@ Thumbs.db
 node_modules/
 package-lock.json
 
-# Build artifacts
-*.zip
-*.crx
+# Signing key (never commit)
 *.pem
+
+# Build script
+build-crx.sh
