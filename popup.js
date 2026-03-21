@@ -129,23 +129,21 @@ function createSiteCard(domain, speed) {
   const actions = document.createElement('div');
   actions.className = 'site-card-actions';
 
-  const applyBtn = document.createElement('button');
-  applyBtn.className = 'btn-apply';
-  applyBtn.type = 'button';
-  applyBtn.innerHTML = '&#10003;';
-  applyBtn.title = 'Apply speed';
+  const resetSiteBtn = document.createElement('button');
+  resetSiteBtn.className = 'btn-reset-site';
+  resetSiteBtn.type = 'button';
+  resetSiteBtn.innerHTML = '<svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1v5h5"/><path d="M1 6A7 7 0 1 1 2.05 10"/></svg>';
+  resetSiteBtn.title = 'Reset to 1.00x';
 
-  applyBtn.addEventListener('click', () => {
+  resetSiteBtn.addEventListener('click', () => {
+    populateSelect(select, 1.0);
     const domainVal = input.value.trim().toLowerCase();
-    if (!domainVal) {
-      showToast('Please enter a domain first');
-      return;
+    if (domainVal) {
+      saveOverrides(getCurrentOverrides());
+      showToast(domainVal + ' reset to 1.00x');
+    } else {
+      showToast('Speed reset to 1.00x');
     }
-    const overrides = getCurrentOverrides();
-    saveOverrides(overrides);
-    applyBtn.classList.add('applied');
-    showToast('Speed applied for ' + domainVal);
-    setTimeout(() => applyBtn.classList.remove('applied'), 600);
   });
 
   const deleteBtn = document.createElement('button');
@@ -163,14 +161,21 @@ function createSiteCard(domain, speed) {
   });
 
   select.addEventListener('change', () => {
-    applyBtn.classList.remove('applied');
+    const domainVal = input.value.trim().toLowerCase();
+    if (domainVal) {
+      saveOverrides(getCurrentOverrides());
+      showToast(domainVal + ' set to ' + parseFloat(select.value).toFixed(2) + 'x');
+    }
   });
 
-  input.addEventListener('input', () => {
-    applyBtn.classList.remove('applied');
+  input.addEventListener('blur', () => {
+    const domainVal = input.value.trim().toLowerCase();
+    if (domainVal) {
+      saveOverrides(getCurrentOverrides());
+    }
   });
 
-  actions.appendChild(applyBtn);
+  actions.appendChild(resetSiteBtn);
   actions.appendChild(deleteBtn);
 
   card.appendChild(input);
@@ -210,6 +215,7 @@ globalSpeedEl.addEventListener('change', () => {
   const speed = parseFloat(globalSpeedEl.value);
   chrome.storage.sync.set({ globalSpeed: speed });
   updateGlobalBadge(speed);
+  showToast('Global speed set to ' + speed.toFixed(2) + 'x');
 });
 
 addSiteBtnEl.addEventListener('click', () => {
@@ -256,13 +262,25 @@ resetGlobalBtnEl.addEventListener('click', () => {
   showToast('Global speed reset to 1.00x');
 });
 
+const resetConfirmEl = document.getElementById('resetConfirm');
+const resetYesEl = document.getElementById('resetYes');
+const resetNoEl = document.getElementById('resetNo');
+
 resetAllBtnEl.addEventListener('click', () => {
-  if (!confirm('This will reset the global speed and remove all site-specific rules. Are you sure?')) return;
+  resetConfirmEl.classList.remove('hidden');
+});
+
+resetNoEl.addEventListener('click', () => {
+  resetConfirmEl.classList.add('hidden');
+});
+
+resetYesEl.addEventListener('click', () => {
   chrome.storage.sync.set({ globalSpeed: 1.0, siteOverrides: [] }, () => {
     populateSelect(globalSpeedEl, 1.0);
     updateGlobalBadge(1.0);
     siteListEl.innerHTML = '';
     updateCountBadge(0);
+    resetConfirmEl.classList.add('hidden');
     showToast('Everything has been reset');
   });
 });

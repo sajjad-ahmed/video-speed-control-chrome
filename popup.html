@@ -57,13 +57,16 @@
 
     <div class="reset-section">
       <button id="resetAllBtn" class="btn-reset" type="button">Reset Everything</button>
+      <div id="resetConfirm" class="reset-confirm hidden">
+        <span class="reset-confirm-text">Are you sure?</span>
+        <button id="resetYes" class="reset-confirm-yes" type="button">Yes</button>
+        <button id="resetNo" class="reset-confirm-no" type="button">No</button>
+      </div>
     </div>
 
     <div id="toast" class="toast hidden"></div>
 
-    <!-- <footer class="footer">
-      Developed by <a href="https://sajjadahmed.com" target="_blank" class="footer-link"><strong>Sajjad Ahmed Niloy</strong> <svg class="external-link-icon" viewBox="0 0 16 16" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2H2v12h12v-4"/><path d="M9 1h6v6"/><path d="M15 1L7 9"/></svg></a> &middot; v0.0.1
-    </footer> -->
+    <footer class="footer">Version: 0.0.1</footer>
   </div>
 
   <script src="popup.js"></script>
