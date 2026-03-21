@@ -16,5 +16,6 @@ package-lock.json
 # Signing key (never commit)
 *.pem
 
-# Build script
+# Build scripts
 build-crx.sh
+build-crx3.py
