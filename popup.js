@@ -11,6 +11,7 @@ const useCurrentSiteBtnEl = document.getElementById('useCurrentSiteBtn');
 const countBadgeEl = document.getElementById('countBadge');
 const toastEl = document.getElementById('toast');
 const resetAllBtnEl = document.getElementById('resetAllBtn');
+const resetGlobalBtnEl = document.getElementById('resetGlobalBtn');
 
 let toastTimeout = null;
 let currentTabDomain = '';
@@ -248,12 +249,20 @@ useCurrentSiteBtnEl.addEventListener('click', () => {
   showToast('Added ' + currentTabDomain);
 });
 
+resetGlobalBtnEl.addEventListener('click', () => {
+  populateSelect(globalSpeedEl, 1.0);
+  updateGlobalBadge(1.0);
+  chrome.storage.sync.set({ globalSpeed: 1.0 });
+  showToast('Global speed reset to 1.00x');
+});
+
 resetAllBtnEl.addEventListener('click', () => {
+  if (!confirm('This will reset the global speed and remove all site-specific rules. Are you sure?')) return;
   chrome.storage.sync.set({ globalSpeed: 1.0, siteOverrides: [] }, () => {
     populateSelect(globalSpeedEl, 1.0);
     updateGlobalBadge(1.0);
     siteListEl.innerHTML = '';
     updateCountBadge(0);
-    showToast('All settings reset');
+    showToast('Everything has been reset');
   });
 });

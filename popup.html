@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Video Speed Controller - Pro</title>
+  <title>Video Speed Controller Pro</title>
   <link rel="stylesheet" href="popup.css" />
 </head>
 <body>
   <div class="container">
     <header class="header">
       <img src="icons/icon48.png" alt="icon" class="header-icon" />
-      <h1 class="header-title">Video Speed Controller - Pro</h1>
+      <h1 class="header-title">Video Speed Controller Pro</h1>
     </header>
 
     <section class="panel">
@@ -18,11 +18,16 @@
         <span class="panel-label">Global Playback Speed</span>
         <span class="speed-badge" id="globalBadge">1.00x</span>
       </div>
-      <div class="select-wrapper">
-        <select id="globalSpeed" class="styled-select">
-          <!-- options populated by JS -->
-        </select>
-        <span class="select-arrow">&#9662;</span>
+      <div class="global-speed-row">
+        <div class="select-wrapper">
+          <select id="globalSpeed" class="styled-select">
+            <!-- options populated by JS -->
+          </select>
+          <span class="select-arrow">&#9662;</span>
+        </div>
+        <button id="resetGlobalBtn" class="btn-reset-global" type="button" title="Reset to 1.00x">
+          <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1v5h5"/><path d="M1 6A7 7 0 1 1 2.05 10"/></svg>
+        </button>
       </div>
       <p class="panel-hint">Default speed for all websites</p>
     </section>
@@ -51,14 +56,14 @@
     </section>
 
     <div class="reset-section">
-      <button id="resetAllBtn" class="btn-reset" type="button">Reset All</button>
+      <button id="resetAllBtn" class="btn-reset" type="button">Reset Everything</button>
     </div>
 
     <div id="toast" class="toast hidden"></div>
 
-    <footer class="footer">
+    <!-- <footer class="footer">
       Developed by <a href="https://sajjadahmed.com" target="_blank" class="footer-link"><strong>Sajjad Ahmed Niloy</strong> <svg class="external-link-icon" viewBox="0 0 16 16" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2H2v12h12v-4"/><path d="M9 1h6v6"/><path d="M15 1L7 9"/></svg></a> &middot; v0.0.1
-    </footer>
+    </footer> -->
   </div>
 
   <script src="popup.js"></script>

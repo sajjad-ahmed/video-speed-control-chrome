@@ -1,4 +1,4 @@
-# Video Speed Controller - Pro — Chrome Extension
+# Video Speed Controller Pro — Chrome Extension
 
 A Chrome extension that gives you full control over HTML5 video playback speed on any website. Set a global default speed or configure site-specific overrides — changes apply instantly, no page reload required.
 
@@ -36,7 +36,7 @@ A Chrome extension that gives you full control over HTML5 video playback speed o
 3. Open Chrome and navigate to `chrome://extensions`.
 4. Enable **Developer mode** (toggle in the top-right corner).
 5. Click **Load unpacked** and select the extracted folder.
-6. Click the **puzzle piece icon** in the Chrome toolbar and pin **Video Speed Controller - Pro**.
+6. Click the **puzzle piece icon** in the Chrome toolbar and pin **Video Speed Controller Pro**.
 
 ### Option 2: Install from CRX
 
@@ -55,7 +55,7 @@ A Chrome extension that gives you full control over HTML5 video playback speed o
 2. Open Chrome and navigate to `chrome://extensions`.
 3. Enable **Developer mode** (toggle in the top-right corner).
 4. Click **Load unpacked** and select the cloned folder.
-5. Click the **puzzle piece icon** in the Chrome toolbar and pin **Video Speed Controller - Pro**.
+5. Click the **puzzle piece icon** in the Chrome toolbar and pin **Video Speed Controller Pro**.
 
 ---
 

@@ -110,6 +110,38 @@ body {
   border-radius: 20px;
 }
 
+/* --- Global Speed Row --- */
+.global-speed-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.global-speed-row .select-wrapper {
+  flex: 1;
+}
+
+.btn-reset-global {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.btn-reset-global:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-glow);
+}
+
 /* --- Custom Select --- */
 .select-wrapper {
   position: relative;
@@ -460,7 +492,7 @@ body {
 
 /* --- Reset Button --- */
 .reset-section {
-  padding: 8px 20px 12px;
+  padding: 4px 20px 8px;
 }
 
 .btn-reset {
@@ -468,7 +500,7 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 9px;
+  padding: 7px;
   font-size: 12px;
   font-weight: 600;
   color: var(--danger);
