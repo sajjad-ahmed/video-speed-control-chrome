@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Video Speed Controller Pro",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "author": "Sajjad Ahmed Niloy",
   "description": "Control video playback speed (0.25x–4.00x) globally or site specific. Instant updates, no refresh needed.",
   "homepage_url": "https://sajjadahmed.com",
@@ -22,7 +22,8 @@
   "permissions": [
     "storage",
     "activeTab",
-    "tabs"
+    "tabs",
+    "webNavigation"
   ],
   "background": {
     "service_worker": "background.js"
