@@ -5,7 +5,7 @@
   function getMatchingSpeed(hostname, globalSpeed, siteOverrides) {
     if (siteOverrides && siteOverrides.length > 0) {
       for (const entry of siteOverrides) {
-        if (hostname === entry.domain || hostname.endsWith('.' + entry.domain)) {
+        if (hostname === entry.domain) {
           return entry.speed;
         }
       }
@@ -52,7 +52,7 @@
 
   function loadAndApply() {
     chrome.storage.sync.get({ globalSpeed: 1.0, siteOverrides: [] }, (data) => {
-      const hostname = window.location.hostname;
+      const hostname = window.location.hostname.replace(/^www\./, '');
       const speed = getMatchingSpeed(hostname, data.globalSpeed, data.siteOverrides);
       applySpeedToVideos(speed);
     });
@@ -66,7 +66,7 @@
             enforceSpeed(node);
           } else {
             chrome.storage.sync.get({ globalSpeed: 1.0, siteOverrides: [] }, (data) => {
-              const hostname = window.location.hostname;
+              const hostname = window.location.hostname.replace(/^www\./, '');
               currentSpeed = getMatchingSpeed(hostname, data.globalSpeed, data.siteOverrides);
               speedReady = true;
               enforceSpeed(node);
@@ -80,7 +80,7 @@
               videos.forEach((v) => enforceSpeed(v));
             } else {
               chrome.storage.sync.get({ globalSpeed: 1.0, siteOverrides: [] }, (data) => {
-                const hostname = window.location.hostname;
+                const hostname = window.location.hostname.replace(/^www\./, '');
                 currentSpeed = getMatchingSpeed(hostname, data.globalSpeed, data.siteOverrides);
                 speedReady = true;
                 videos.forEach((v) => enforceSpeed(v));

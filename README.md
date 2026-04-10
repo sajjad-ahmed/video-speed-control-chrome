@@ -22,8 +22,8 @@ A Chrome extension that gives you full control over HTML5 video playback speed o
 
 | Format | Link |
 |--------|------|
-| ZIP | [video-speed-controller-pro-v0.0.1.zip](download/video-speed-controller-pro-v0.0.1.zip) |
-| CRX | [video-speed-controller-pro-v0.0.1.crx](download/video-speed-controller-pro-v0.0.1.crx) |
+| ZIP | [video-speed-controller-pro-v0.1.0.zip](download/video-speed-controller-pro-v0.1.0.zip) |
+| CRX | [video-speed-controller-pro-v0.1.0.crx](download/video-speed-controller-pro-v0.1.0.crx) |
 
 ---
 
@@ -31,7 +31,7 @@ A Chrome extension that gives you full control over HTML5 video playback speed o
 
 ### Option 1: Install from ZIP (recommended)
 
-1. Download the [ZIP file](download/video-speed-controller-pro-v0.0.1.zip) from the download section above.
+1. Download the [ZIP file](download/video-speed-controller-pro-v0.1.0.zip) from the download section above.
 2. Extract the ZIP to a folder on your computer.
 3. Open Chrome and navigate to `chrome://extensions`.
 4. Enable **Developer mode** (toggle in the top-right corner).
@@ -40,7 +40,7 @@ A Chrome extension that gives you full control over HTML5 video playback speed o
 
 ### Option 2: Install from CRX
 
-1. Download the [CRX file](download/video-speed-controller-pro-v0.0.1.crx) from the download section above.
+1. Download the [CRX file](download/video-speed-controller-pro-v0.1.0.crx) from the download section above.
 2. Open Chrome and navigate to `chrome://extensions`.
 3. Enable **Developer mode** (toggle in the top-right corner).
 4. Drag and drop the `.crx` file onto the extensions page.
@@ -125,8 +125,8 @@ video-speed-control/
 ├── content.js             # Content script (applies playbackRate to videos)
 ├── background.js          # Service worker (tab navigation handling)
 ├── download/
-│   ├── video-speed-controller-pro-v0.0.1.zip   # Installable ZIP package
-│   └── video-speed-controller-pro-v0.0.1.crx   # Signed CRX package
+│   ├── video-speed-controller-pro-v0.1.0.zip   # Installable ZIP package
+│   └── video-speed-controller-pro-v0.1.0.crx   # Signed CRX package
 ├── .gitignore             # Git ignore rules
 ├── LICENSE                # MIT License
 └── README.md              # This file

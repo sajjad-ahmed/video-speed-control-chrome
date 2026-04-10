@@ -1,7 +1,7 @@
 const SPEED_MIN = 0.25;
 const SPEED_MAX = 4.0;
 const SPEED_STEP = 0.25;
-const MAX_SITES = 10;
+const MAX_SITES = 15;
 
 const globalSpeedEl = document.getElementById('globalSpeed');
 const globalBadgeEl = document.getElementById('globalBadge');
@@ -241,7 +241,7 @@ useCurrentSiteBtnEl.addEventListener('click', () => {
 
   const existing = getCurrentOverrides();
   const alreadyExists = existing.some(
-    (e) => e.domain === currentTabDomain || currentTabDomain.endsWith('.' + e.domain) || e.domain.endsWith('.' + currentTabDomain)
+    (e) => e.domain === currentTabDomain
   );
 
   if (alreadyExists) {
